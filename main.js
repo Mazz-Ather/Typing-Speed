@@ -8,7 +8,7 @@ async function login() {
             {
                 type: "list",
                 name: "choice",
-                message: "Choose your difficulty level and prepare to type!",
+                message: "Please Register Or sign-in First and Be Prepare To Type!",
                 choices: ["Register", "Sign in", "Exit"],
             },
         ]);
@@ -33,7 +33,13 @@ async function main() {
                 type: "list",
                 name: "choice",
                 message: "Choose your difficulty level and prepare to type!",
-                choices: ["Beginner", "Intermediate", "Advanced", "Introduction to this Game", "Exit"],
+                choices: [
+                    "Beginner",
+                    "Intermediate",
+                    "Advanced",
+                    "Introduction to this Game",
+                    "Exit",
+                ],
             },
         ]);
         switch (answers.choice) {
@@ -95,10 +101,10 @@ async function handleEasy() {
     if (easy.easy === "Start A Game") {
         const confirm = await inquirer.prompt([
             {
-                'type': "confirm",
-                'name': "confirm",
-                'message': "After Pressing Y , Yor time will be start "
-            }
+                type: "confirm",
+                name: "confirm",
+                message: "After Pressing Y , Yor time will be start ",
+            },
         ]);
         if (confirm.confirm) {
             await startTim();
@@ -150,7 +156,7 @@ async function handleEasy() {
     }
     else if (easy.easy === "show a sentence") {
         console.log("**********************");
-        console.log('Please pass the salt.');
+        console.log("Please pass the salt.");
         console.log("**********************");
         await handleEasy();
     }
@@ -173,10 +179,10 @@ async function hadleIntermediate() {
     if (medium.medium === "Start A Game") {
         const confirm = await inquirer.prompt([
             {
-                'type': "confirm",
-                'name': "confirm",
-                'message': "After Pressing Y , Yor time will be start "
-            }
+                type: "confirm",
+                name: "confirm",
+                message: "After Pressing Y , Yor time will be start ",
+            },
         ]);
         if (confirm.confirm) {
             await startTim();
@@ -188,7 +194,9 @@ async function hadleIntermediate() {
                     message: 'write this:\n******************\n("We should remember the sacrifices made by those who came before us.")\n**********************:',
                 },
             ]);
-            let sentence = "We should remember the sacrifices made by those who came before us.".trim().split(" ");
+            let sentence = "We should remember the sacrifices made by those who came before us."
+                .trim()
+                .split(" ");
             if (star.medium) {
                 end();
                 totalTime = (endTime - startTime) / 1000;
@@ -237,7 +245,7 @@ async function hadleIntermediate() {
     }
     else if (medium.medium === "show a sentence") {
         console.log("**********************");
-        console.log('We should remember the sacrifices made by those who came before us.');
+        console.log("We should remember the sacrifices made by those who came before us.");
         console.log("**********************");
         await hadleIntermediate();
     }
@@ -263,10 +271,10 @@ async function handleAdvance() {
         console.log("----------------------------------------------------------------------------------------------");
         const confirm = await inquirer.prompt([
             {
-                'type': "confirm",
-                'name': "confirm",
-                'message': "After Pressing Y , Yor time will be start "
-            }
+                type: "confirm",
+                name: "confirm",
+                message: "After Pressing Y , Yor time will be start ",
+            },
         ]);
         if (confirm.confirm) {
             await startTim();
@@ -278,7 +286,9 @@ async function handleAdvance() {
                     message: 'write this:\n******************\n("While The Debate Surrounding The Ethical implications of Artificial Intelligence Continues to rage on, one thing is Certain: AI has the potential to Fundamentally Alter the way we live, work, and Interact with the world around pen spark")\n**********************:',
                 },
             ]);
-            let sentence = "While The Debate Surrounding The Ethical implications of Artificial Intelligence Continues to rage on, one thing is Certain: AI has the potential to Fundamentally Alter the way we live, work, and Interact with the world around pen spark".trim().split(" ");
+            let sentence = "While The Debate Surrounding The Ethical implications of Artificial Intelligence Continues to rage on, one thing is Certain: AI has the potential to Fundamentally Alter the way we live, work, and Interact with the world around pen spark"
+                .trim()
+                .split(" ");
             if (star.hard) {
                 end();
                 totalTime = (endTime - startTime) / 1000;
